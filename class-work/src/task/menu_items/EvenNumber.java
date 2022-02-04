@@ -13,13 +13,12 @@ public class EvenNumber {
 
     public void getResult() {
 
-        System.out.println("Even number task selected");
         System.out.println("Enter your number");
         int userNumber = scanner.nextInt();
 
         if (userNumber % 2 == 0) {
             System.out.println("You entered the even number");
-        } else {
+        } else{
             System.out.println("You entered the odd number");
         }
     }
