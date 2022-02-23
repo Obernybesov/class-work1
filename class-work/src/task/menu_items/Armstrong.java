@@ -13,26 +13,27 @@ public class Armstrong {
 
         Scanner scanner = new Scanner(System.in);
 
-        int reminder;
-        int result;
+        private int reminder;
+        private int result;
 
-        //It's incorrect decision. Just 1st attempt
 
         public void getResult() {
 
             System.out.println("Enter your number");
             int userNumber = scanner.nextInt();
             String uNumberToString = Integer.toString(userNumber);
+            int originalNumber = userNumber;
 
-            while (userNumber != 0) {
-                reminder = userNumber % 10;
+
+            while (originalNumber != 0) {
+                reminder = originalNumber % 10;
                 result += Math.pow(reminder, uNumberToString.length());
-                userNumber /= 10;
+                originalNumber /= 10;
             }
             if(result == userNumber) {
-                System.out.println(userNumber + " Armstrong");
+                System.out.println(userNumber + " is an Armstrong number");
             } else {
-                System.out.println(userNumber + "not Armstrong");
+                System.out.println(userNumber + " is not an Armstrong number.");
             }
 
         }

@@ -6,16 +6,23 @@ import java.util.Scanner;
 
 public class Menu {
 
-    Scanner scanner = new Scanner(System.in);
 
-    private int menuItem;
-    private final String ARMSTRONG = "Armstrong";
     private final String EVEN_NUMBER = "Even Number";
+    private final String ARMSTRONG = "Armstrong";
+    private final String REVERSE = "Reverse";
     private final String FIBONACCI = "Fibonacci";
     private final String REPLACE = "Replace";
-    private final String REVERSE = "Reverse";
+
+
+    Scanner scanner = new Scanner(System.in);
+    EvenNumber evenNumber = new EvenNumber();
+    Armstrong armstrong = new Armstrong();
+    Reverse reverse = new Reverse();
+    Fibonacci fibonacci = new Fibonacci();
+    Replace replace = new Replace();
 
     public void getMenu() {
+        System.out.println("Tasks menu:");
         System.out.println("1. " + EVEN_NUMBER);
         System.out.println("2. " + ARMSTRONG);
         System.out.println("3. " + REVERSE);
@@ -25,24 +32,27 @@ public class Menu {
 
     public void selectMenuItem() {
         System.out.println("Select your task by number");
-        menuItem = scanner.nextInt();
+        int menuItem = scanner.nextInt();
         switch (menuItem) {
             case 1:
-                EvenNumber evenNumber = new EvenNumber();
+                System.out.println("\"" + EVEN_NUMBER + "\"" + " task selected");
                 evenNumber.getResult();
                 break;
             case 2:
-                Armstrong armstrong = new Armstrong();
+                System.out.println("\"" + ARMSTRONG + "\"" + " task selected");
                 armstrong.getResult();
                 break;
             case 3:
-                Reverse reverse = new Reverse();
+                System.out.println("\"" + REVERSE + "\"" + " task selected");
+                System.out.println("Reversed string: " + reverse.reverseString());
                 break;
             case 4:
-                Fibonacci fibonacci = new Fibonacci();
+                System.out.println("\"" + FIBONACCI + "\"" + " task selected");
+                fibonacci.getFibonacci();
                 break;
             case 5:
-                Replace replace = new Replace();
+                System.out.println("\"" + REPLACE + "\"" + " task selected");
+                replace.getStringWithReplacedChars();
                 break;
             default:
                 System.out.println("There is no any task with such number");

@@ -17,6 +17,7 @@ public class LoginPage {
             System.out.println("Enter your password");
         } else {
             System.out.println("Incorrect name");
+            System.exit(1);
         }
     }
 
@@ -26,6 +27,7 @@ public class LoginPage {
             System.out.println("You successfully signed in");
         } else {
             System.out.println("Invalid password");
+            System.exit(1);
         }
     }
 }
