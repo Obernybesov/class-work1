@@ -1,5 +1,6 @@
 package task.menu_items;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Armstrong {
@@ -17,26 +18,27 @@ public class Armstrong {
         private int result;
 
 
-        public void getResult() {
+        public void armstrongCalculation() {
 
-            System.out.println("Enter your number");
-            int userNumber = scanner.nextInt();
-            String uNumberToString = Integer.toString(userNumber);
-            int originalNumber = userNumber;
+            try {
+                System.out.println("Enter your number");
+                int userNumber = scanner.nextInt();
+                String uNumberToString = Integer.toString(userNumber);
+                int originalNumber = userNumber;
 
 
-            while (originalNumber != 0) {
-                reminder = originalNumber % 10;
-                result += Math.pow(reminder, uNumberToString.length());
-                originalNumber /= 10;
+                while (originalNumber != 0) {
+                    reminder = originalNumber % 10;
+                    result += Math.pow(reminder, uNumberToString.length());
+                    originalNumber /= 10;
+                }
+                if(result == userNumber) {
+                    System.out.println(userNumber + " is an Armstrong number");
+                } else {
+                    System.out.println(userNumber + " is not an Armstrong number.");
+                }
+            } catch (InputMismatchException ime) {
+                System.out.println("You entered non integer value. Re-login to try again");
             }
-            if(result == userNumber) {
-                System.out.println(userNumber + " is an Armstrong number");
-            } else {
-                System.out.println(userNumber + " is not an Armstrong number.");
-            }
-
         }
-
-
 }
