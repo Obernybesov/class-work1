@@ -7,7 +7,7 @@ public class Fibonacci {
 
 
 
-    public void getFibonacci() {
+    public void fibonacciSequenceTwentyDigits() {
        int fibonacci[] = new int[20];
         System.out.println("First 20 digits of Fibonacci sequence:");
         fibonacci[0] = 1;
